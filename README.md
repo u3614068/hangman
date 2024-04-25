@@ -2,7 +2,7 @@
 COMP2113 Course Project
 
 Group members:
-UID: 3036140686    Cheung Ka Yam
+UID: 3036140686    Cheung Ka Yam, CHEUNG Chun Yin (3036260709)
 
 
 
