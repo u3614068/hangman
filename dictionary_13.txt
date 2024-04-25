@@ -3,5 +3,3 @@ Bird
 Tree
 Rainbow
 Sun
-Moon
-Star
