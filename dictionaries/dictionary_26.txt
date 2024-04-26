@@ -2,9 +2,9 @@ Quack
 Rabbit
 Sunrise
 Tennis
-Umbrella
-Violin
+Breakfast
+Lunch
 Waterfall
-Xylophone
+Dinner
 Yellow
-Zebra
+Mangosteen
