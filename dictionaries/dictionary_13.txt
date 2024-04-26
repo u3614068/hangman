@@ -1,0 +1,10 @@
+Cat
+Bird
+Tree
+Rainbow
+Sun
+Moon
+Star
+Cake
+Book
+Chair
