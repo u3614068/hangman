@@ -105,3 +105,59 @@ void HangmanGame::play(int& gamesPlayed, int& timesHanged, int& timesGuessed, in
     timesHanged++;
     timesGuessed += guessedLetters.size();
 }
+
+// Method: Displaying the current guessed word state
+void HangmanGame::displayWord(){
+    cout<<"Current word: " << guessedWord << endl;
+}
+
+// Method: Check if the word has been guessed correctly
+bool HangmanGame::isWordGuessed(){
+    return secretWord == guessedWord;
+}
+
+// Method: Display the hangman figure according to the number of incorrect guesses
+void HangmanGame::displayHangman() {
+    cout << "Hangman figure: " << endl;
+    cout << hangmanFigures[numWrongGuesses] << endl;
+}
+
+// Method: Check if the game is over
+bool HangmanGame::isGameOver(){
+    return numWrongGuesses >= MAX_WRONG_GUESSES || isWordGuessed)();
+}
+
+// Method: Save game statistics to file
+void HangmanGame::saveStats(int gamesPlayed, int timesHanged, int timesGuessed, int timesWon){
+    ofstream file("stats.txt");
+    if (file.is_open()){
+        file<< gamesPlayed << " " << timesHanged << " " << timesGuessed << " " << timesWon;
+        file.close();
+    }
+}
+
+//Method: Load game statistics from file
+void HangmanGame::loadStats(int& gamesPlayed, int& timesHanged, int& timesGuessed, int& timesWon){
+    ifstream file("stats.txt");
+    if (file.is_open()){
+        file >> gamesPlayed >> timesHanged >> timesGuessed >> timesWon;
+        file.close();
+    } else {
+        cerr << "Unable to load stats. Starting with zero stats." << endl;
+        gamesPlayed = 0;
+        timesHanged = 0;
+        timesGuessed = 0;
+        timesWon = 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
