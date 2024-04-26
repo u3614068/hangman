@@ -2,12 +2,12 @@
 COMP2113 Course Project
 
 Group members:
-UID: 3036140686    Cheung Ka Yam, CHEUNG Chun Yin (3036260709)
+UID: `Cheung Ka Yam (3036140686)` , `CHEUNG Chun Yin (3036260709)` , 
 
 
 
 
-Description:
+`Description:`
 
 The Hangman game is a word-guessing game where the player needs to guess a secret word by suggesting letters within a certain number of attempts. The game features random word selection from a dictionary, ASCII art for the hangman figure, game statistics tracking, and more.
 
