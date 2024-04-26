@@ -1,0 +1,10 @@
+Orange
+Lion
+Snake
+Mouse
+Hat
+Shoe
+Key
+Door
+Window
+Clock
