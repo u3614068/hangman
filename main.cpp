@@ -12,8 +12,8 @@ void Status(int played, int hanged, int guessed, int won) {
   cout << "|               Game Status             |\n";
   cout << "----------------------------------------\n";
   cout << "| Games Played:   " << played << "\t\t\t|\n";
-  cout << "| Man Hanged:     " << hanged << "\t\t\t|\n";
-  cout << "| Man Saved:      " << guessed << "\t\t\t|\n";
+  cout << "| Times Hanged:   " << hanged << "\t\t\t|\n";
+  cout << "| Times Guessed:  " << guessed << "\t\t\t|\n";
   cout << "| Games Won:      " << won << "\t\t\t|\n";
   cout << "----------------------------------------\n";
 }
