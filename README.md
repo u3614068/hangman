@@ -7,14 +7,12 @@ UID: `Cheung Ka Yam (3036140686)` , `CHEUNG Chun Yin (3036260709)` ,
 
 
 
-```diff
--[Description]
-```
+`Description:`
 
 The Hangman game is a word-guessing game where the player needs to guess a secret word by suggesting letters within a certain number of attempts. The game features random word selection from a dictionary, ASCII art for the hangman figure, game statistics tracking, and more.
 
 
-Game rules:
+`Game rules:`
 
 At the start of the game, the player is presented with a number of blank spaces representing the letters of a word.
 The game selects a secret word at random from a provided dictionary file.
@@ -87,7 +85,7 @@ The game ends when the player either guesses the word correctly or the hangman f
 This is a basic example of how the game might progress. The actual game will include more features such as displaying game statistics and more functions will be demonstrated, allowing the player to play multiple games in one session.
 
 
-Features:
+`Features:`
 
 1. Display game status
 2. Display game menu
@@ -102,10 +100,10 @@ Features:
 
 
 
-Non-standard libraries:
+`Non-standard libraries:`
 None
 
-Compilation and execution instructions:
+`Compilation and execution instructions:`
 
 1. Ensure that you have a C++ compiler installed on your system.
 2. Open a terminal or command prompt.
@@ -118,5 +116,5 @@ Compilation and execution instructions:
    This command will start the Hangman game.
 6. Follow the on-screen instructions to play the game.
 
-Game demostration:
+`Game demostration:`
 
