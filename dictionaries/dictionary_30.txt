@@ -1,0 +1,10 @@
+Cat
+Dog
+Bird
+Fish
+Lion
+Elephant
+Giraffe
+Monkey
+Panda
+Zebra
