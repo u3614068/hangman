@@ -24,7 +24,7 @@ If the player guesses an incorrect letter or the guessed letter is not in the wo
 The game ends when the player either guesses the word correctly or the hangman figure is complete.
 
 
-How to play:
+`How to play:`
 1. The game starts and a word is randomly selected from the dictionary. For example, let's say the word is "hangman". The player sees a series of asterisks representing the letters of the word:
 
     ```
