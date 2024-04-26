@@ -51,3 +51,57 @@ string HangmanGame::selectRandomWord(const string &dictionaryFilename) {
     int index = rand() % words.size();
     return words[index];
 }
+
+void HangmanGame::play(int& gamesPlayed, int& timesHanged, int& timesGuessed, int& timesWon) {
+    using namespace std;
+
+    cout << "Welcome to Hangman!" << endl;
+
+    while (!isGameOver()) {
+        displayWord(); 
+        displayHangman();
+        cout << "Guessed letters: ";
+        for (char letter : guessedLetters) {
+            cout << letter << " ";
+        }
+        cout << endl;
+
+        char guess;
+        cout << "Enter your guess: ";
+        cin >> guess;
+
+        if (find(guessedLetters.begin(), guessedLetters.end(), guess) != guessedLetters.end()) {
+            cout << "You have already guessed this letter. Please try again." << endl;
+            continue;
+        }
+
+        guessedLetters.push_back(guess); // Add the guessed letter to the vector of guessed letters
+
+        bool correctGuess = false;
+        for (size_t i = 0; i < secretWord.length(); ++i) {
+            if (secretWord[i] == guess) {
+                guessedWord[i] = guess; // Update the guessed word with the correct guess
+                correctGuess = true;
+            }
+        }
+
+        if (!correctGuess) {
+            cout << "Incorrect guess!" << endl;
+            ++numWrongGuesses; // Increment the number of wrong guesses
+        }
+
+        if (isWordGuessed()) {
+            cout << "Congratulations! You guessed the word: " << secretWord << endl;
+            gamesPlayed++;
+            timesGuessed += guessedLetters.size();
+            timesWon++;
+            return;
+        }
+    }
+
+    cout << "Sorry, you ran out of guesses. The word was: " << secretWord << endl;
+    displayHangman();
+    gamesPlayed++;
+    timesHanged++;
+    timesGuessed += guessedLetters.size();
+}
