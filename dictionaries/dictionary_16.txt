@@ -1,0 +1,10 @@
+Pencil
+Table
+Chair
+Book
+Car
+Bike
+Plane
+Ship
+Train
+Bus
