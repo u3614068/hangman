@@ -52,15 +52,13 @@ string HangmanGame::SelectRandomWord(const string& dictionary_filename) {
     return words[index];
 }
 
-void HangmanGame::play(int& played, int& hanged, int& guessed, int& won) {
-
-    cout << "Welcome to Hangman!" << endl;
+void HangmanGame::Play(int& played, int& hanged, int& guessed, int& won) {
 
     while (!IsGameOver()) {
         DisplayWord(); 
         DisplayHangman();
         cout << "Guessed letters: ";
-        for (char letter : GuessedLetters) {
+        for (char letter : guessed_letters) {
             cout << letter << " ";
         }
         cout << endl;
@@ -69,12 +67,12 @@ void HangmanGame::play(int& played, int& hanged, int& guessed, int& won) {
         cout << "Enter your guess: ";
         cin >> guess;
 
-        if (find(GuessedLetters.begin(), GuessedLetters.end(), guess) != GuessedLetters.end()) {
-            cout << "You have already guessed this letter. Please try again." << endl;
+        if (find(guessed_letters.begin(), guessed_letters.end(), guess) != guessed_letters.end()) {
+            cout << "\n____You have already guessed this letter. Please try a new one.____" << endl;
             continue;
         }
 
-        GuessedLetters.push_back(guess); // Add the guessed letter to the vector of guessed letters
+        guessed_letters.push_back(guess); // Add the guessed letter to the vector of guessed letters
 
         bool correct_guess = false;
         for (size_t i = 0; i < secret_word.length(); ++i) {
@@ -84,30 +82,34 @@ void HangmanGame::play(int& played, int& hanged, int& guessed, int& won) {
             }
         }
 
+        if (correct_guess) {
+            cout << "\n____________________________Keep it up!____________________________" << endl;
+        }
+        
         if (!correct_guess) {
-            cout << "Incorrect guess!" << endl;
+            cout << "\n__________________________A wrong guess!___________________________" << endl;
             ++num_wrong_guesses; // Increment the number of wrong guesses
         }
 
         if (IsWordGuessed()) {
-            cout << "Congratulations! You guessed the word: " << secret_word << endl;
+            cout << "\n\nCongratulations! You guessed the word: " << secret_word << endl;
             played++;
-            guessed += GuessedLetters.size();
+            guessed += guessed_letters.size();
             won++;
             return;
         }
     }
 
-    cout << "Sorry, you ran out of guesses. The word was: " << secret_word << endl;
+    cout << "\n\nSorry, you ran out of guesses. The word was: " << secret_word << endl;
     DisplayHangman();
     played++;
     hanged++;
-    guessed += GuessedLetters.size();
+    guessed += guessed_letters.size();
 }
 
 // Method: Displaying the current guessed word state
 void HangmanGame::DisplayWord(){
-    cout<<"Current word: " << guessed_word << endl;
+    cout<<"\n\nCurrent word: " << guessed_word << endl;
 }
 
 // Method: Check if the word has been guessed correctly
@@ -122,8 +124,8 @@ void HangmanGame::DisplayHangman() {
 }
 
 // Method: Check if the game is over
-bool HangmanGame::isGameOver(){
-    return num_wrong_guesses >= max_wrong_guesses || IsWordGuessed)();
+bool HangmanGame::IsGameOver(){
+    return num_wrong_guesses >= max_wrong_guesses || IsWordGuessed();
 }
 
 // Method: Save game statistics to file
@@ -142,7 +144,6 @@ void HangmanGame::LoadStats(int& played, int& hanged, int& guessed, int& won){
         file >> played >> hanged >> guessed >> won;
         file.close();
     } else {
-        cerr << "Unable to load stats. Starting with zero stats." << endl;
         played = 0;
         hanged = 0;
         guessed = 0;
