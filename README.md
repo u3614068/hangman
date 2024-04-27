@@ -2,9 +2,7 @@
 COMP2113 Course Project (Group 32)
 
 Group members:
-UID: `Cheung Ka Yam (3036140686)` , `CHEUNG Chun Yin (3036260709)` , `Hau Yuen Man ()` , `Tang Wai In ()` , `Wong Chun Ho ()`
-
-
+UID: `Cheung Ka Yam (3036140686)` , `CHEUNG Chun Yin (3036260709)` , `Hau Yuen Man (3036140727)` , `Tang Wai In (3036260723)` , `Wong Chun Ho (3036140739)`
 
 
 `Description:`
@@ -87,17 +85,15 @@ This is a basic example of how the game might progress. The actual game will inc
 
 `Features:`
 
-1. Display game status
-2. Display game menu
+1. Display game status: ASCII Art
+2. Display game menu: ASCII Art
 3. Pick a dictionary of words: a dictionary out of 30 dictionaries is randomly chosen
-4. Save game status: a file is saved to store the game status
-5. Display guessed letters:STL(vector) is used to store guessed letters 
-6. Display farewell message
-7. Random Word Selection: The game selects a secret word at random from a provided dictionary file, which ensures a different gameplay experience each time.
-8. ASCII Art: The game uses ASCII art to visually represent the hangman figure
-9. Game Statistics: The game will keep track of statistics such as the number of games played, times the player was hanged, times the player guessed the word, and times the player won.
-
-
+4. Random Word Selection: The SelectRandomWord function dynamically allocates memory to store the words read from the dictionary file. The words are stored in a vector<string> called words, which grows dynamically as new words are added.
+5. Save game status: a file is saved to store the game status
+6. Display guessed letters: STL(vector) is used to store guessed letters 
+7. Display farewell message: ASCII Art
+8. Game Statistics: The game keeps track of the statistics using such as the number of games played, how many times the stickman was hanged, how many guesses the player made and the number of game won using file input and output
+9. Seperate compilation: Codes were stored in different files, namely hangman.cpp, hangman.h, main.cpp, dictionaries and Makefile.
 
 
 `Non-standard libraries:`
@@ -109,12 +105,17 @@ None
 2. Open a terminal or command prompt.
 3. Navigate to the directory where the source code files are located.
 4. Run the following command to compile the game:
-   g++ -std=c++11 -Wall -Werror -o hangman main.cpp hangman.cpp
-   This command will compile the game and generate an executable file named "hangman".
-5. Run the following command to execute the game:
-   ./hangman
-   This command will start the Hangman game.
-6. Follow the on-screen instructions to play the game.
+   1. make all
+   2. ./main
+5. Follow the on-screen instructions to play the game.
+
 
 `Game demostration:`
+
+Part 1: https://github.com/u3614068/hangman/assets/168083449/395c6901-767f-4cbc-8e74-ef06fc431c10
+
+Part 2: https://github.com/u3614068/hangman/assets/168083449/77c9ffdf-d4b2-45bc-ad6e-fedff9bd82f7
+
+
+
 
