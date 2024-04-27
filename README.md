@@ -2,7 +2,7 @@
 COMP2113 Course Project (Group 32)
 
 Group members:
-UID: `Cheung Ka Yam (3036140686)` , `CHEUNG Chun Yin (3036260709)` , `Hau Yuen Man ()` , `Tang Wai In ()` , `Wong Chun Ho ()`
+UID: `Cheung Ka Yam (3036140686)` , `CHEUNG Chun Yin (3036260709)` , `Hau Yuen Man (3036140727)` , `Tang Wai In (3036260723)` , `Wong Chun Ho (3036140739)`
 
 
 
