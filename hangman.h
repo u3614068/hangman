@@ -9,7 +9,7 @@ class HangmanGame {
 public:
     // Constants for the game
     static const int max_wrong_guesses = 6;  // Maximum number of wrong guesses allowed
-    static const int num_dictionaries = 30; // Number of dictionaries available
+    static const int dict_num = 30; // Number of dictionaries available
 
     // Static variables to track overall game statistics
     static int played;   // Total number of games played
@@ -18,7 +18,7 @@ public:
     static int won;      // Total number of games won
 
     // Constructor to initialize the HangmanGame object with a dictionary
-    HangmanGame(const std::string& dictionaryFilename);
+    HangmanGame(const std::string& dictionary_filename);
 
     // Method to play the game
     void Play(int& played, int& hanged, int& guessed, int& won);
