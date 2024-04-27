@@ -7,7 +7,7 @@
 using namespace std;
 
 // display game status
-void Status(int played, int hanged, int guessed, int won) {
+void DisplayStats(int played, int hanged, int guessed, int won) {
   cout << "\n----------------------------------------\n";
   cout << "|               Game Status             |\n";
   cout << "----------------------------------------\n";
@@ -19,7 +19,7 @@ void Status(int played, int hanged, int guessed, int won) {
 }
 
 // display menu
-int Menu() {
+int DisplayMenu() {
   int choice;
   do {
     cout << "\n+-------------------------+\n";
@@ -51,18 +51,18 @@ int main() {
 
   int played, hanged, guessed, won;
   // load previous record
-  HangmanGame::LoadStatus(played, hanged, guessed, won);
+  HangmanGame::LoadStats(played, hanged, guessed, won);
 
   // display welcome page and status
   cout << "\n----------------------------------------\n";
   cout << "|         Welcome to HANGMAN ~          |\n";
   cout << "----------------------------------------\n";
-  Status(played, hanged, guessed, won);
+  DisplayStatus(played, hanged, guessed, won);
 
   int choice;
   do {
     // display menu
-    choice = Menu();
+    choice = DisplayMenu();
 
     if (choice == 1) {
       // starting a new game by randomly picking a dictionary file
