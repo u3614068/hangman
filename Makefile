@@ -1,7 +1,7 @@
-all: main
+FLAGS = -pedantic-errors -std=c++11
 
 main: main.cpp hangman.cpp
-	g++ -pedantic-errors -std=c++11 -o $@ $^
+	g++ $(FLAGS) -o $@ $^
 
 clean:
 	rm -f main
