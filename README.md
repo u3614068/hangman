@@ -1,8 +1,8 @@
 # hangman
-COMP2113 Course Project
+COMP2113 Course Project (Group 32)
 
 Group members:
-UID: `Cheung Ka Yam (3036140686)` , `CHEUNG Chun Yin (3036260709)` , 
+UID: `Cheung Ka Yam (3036140686)` , `CHEUNG Chun Yin (3036260709)` , `Hau Yuen Man ()` , `Tang Wai In ()` , `Wong Chun Ho ()`
 
 
 
