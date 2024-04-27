@@ -39,7 +39,7 @@ int DisplayMenu() {
 
     // check if input is valid
     if (choice != 1 && choice != 2) {
-      cout << "Invalid input. Please enter 1 or 2.\n";
+      cout << "\n\nInvalid input. Please enter 1 or 2.\n";
     }
   } while (choice != 1 && choice != 2);
   return choice;
@@ -57,7 +57,7 @@ int main() {
   cout << "\n----------------------------------------\n";
   cout << "|         Welcome to HANGMAN ~          |\n";
   cout << "----------------------------------------\n";
-  DisplayStatus(played, hanged, guessed, won);
+  DisplayStats(played, hanged, guessed, won);
 
   int choice;
   do {
@@ -65,25 +65,26 @@ int main() {
     choice = DisplayMenu();
 
     if (choice == 1) {
+      cout << "\n\n___________________________Let's go!_____________________________" << endl;
       // starting a new game by randomly picking a dictionary file
       int dict_index = rand() % HangmanGame::dict_num + 1;
       string file_name = "dictionaries/dictionary_" + to_string(dict_index) + ".txt";
       // creat game object
       HangmanGame hangman(file_name);
       // play the game
-      hangman.play(played, hanged, guessed, won);
+      hangman.Play(played, hanged, guessed, won);
     }
   // loop until 2 is chosen
   } while (choice != 2);
 
   // Save game
-  HangmanGame::SaveStatus(played, hanged, guessed, won);
+  HangmanGame::SaveStats(played, hanged, guessed, won);
 
   // Farewell the player and display game status
-  cout << "\n----------------------------------------\n";
+  cout << "\n\n----------------------------------------\n";
   cout << "|              See you soon~            |\n";
   cout << "----------------------------------------\n";
-  Status(played, hanged, guessed, won);
+  DisplayStats(played, hanged, guessed, won);
 
   return 0;
 }
